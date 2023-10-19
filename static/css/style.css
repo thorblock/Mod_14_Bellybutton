@@ -73,9 +73,31 @@ html {
 }
 #title span {
   background: -webkit-linear-gradient(white, #38495a);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+body {
+  background-color: rgb(159, 151, 198);
+}
+
+.jumbotron {
+  background: #454db7 linear-gradient(#454db7, #654988);
+  background-size: 100% 100%;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.well {
+  background: #1a715d linear-gradient(#d39235, #c7c6c3);
+  background-size: 100% 100%;
+  overflow: auto;
+}
+
 
 @keyframes animStar {
   from {
