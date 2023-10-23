@@ -71,7 +71,7 @@ function demo(selectedValue) {
         // Log the entries Array
         console.log(entries);
     });
-  }
+}
   
 
 // Make the bar chart
@@ -103,9 +103,10 @@ function bar(selectedValue) {
         }];
 
         let layout1 = {
-            title: "Ten Most Common OTU's Found",
+            title: "Top Ten Most Common OTU's Found",
             xaxis: {title: "Sample Values"},
-            yaxis: {type: "category"},
+            yaxis: {type: "Category"}
+            
         };
 
         
@@ -137,13 +138,15 @@ function bubble(selectedValue) {
             marker: {
                 size: obj.sample_values,
                 color: obj.otu_ids,
-                colorscale: "viridis"
+                colorscale: "Viridis"
             }
         }];
     
         // Apply the x-axis lengend to the layout
         let layout3 = {
-            xaxis: {title: "OTU ID"}
+            title: "OTU Frequency per Sample",
+            xaxis: {title: "OTU ID"},
+            yaxis: {type: "Category"}
         };
     
         // Use Plotly to plot the data in a bubble chart
@@ -169,32 +172,26 @@ function gauge(selectedValue) {
         let trace2 = [{
             domain: { x: [0, 1], y: [0, 1] },
             value: obj.wfreq,
-            title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: {size: 20}},
             type: "indicator", 
+            title: { text: "<b>Washing Frequency</b><br>Scrubs per Week", font: {size: 18}},
             mode: "gauge+number",
             gauge: {
                 axis: {range: [null, 10]}, 
-                bar: {color: "rgb(68,166,198)"},
+                bar: {color: "rgb(38, 30, 146)"},
                 steps: [
-                    { range: [0, 1], color: "rgb(233,245,248)" },
-                    { range: [1, 2], color: "rgb(218,237,244)" },
-                    { range: [2, 3], color: "rgb(203,230,239)" },
-                    { range: [3, 4], color: "rgb(188,223,235)" },
-                    { range: [4, 5], color: "rgb(173,216,230)" },
-                    { range: [5, 6], color: "rgb(158,209,225)" },
-                    { range: [6, 7], color: "rgb(143,202,221)" },
-                    { range: [7, 8], color: "rgb(128,195,216)" },
-                    { range: [8, 9], color: "rgb(113,187,212)" },
-                    { range: [9, 10], color: "rgb(98,180,207)" }
+                    { range: [0, 1], color: "rgb(236, 235, 249)" },
+                    { range: [1, 2], color: "rgb(214, 212, 241)" },
+                    { range: [2, 3], color: "rgb(199, 196, 241)" },
+                    { range: [3, 4], color: "rgb(191, 187, 244)" },
+                    { range: [4, 5], color: "rgb(178, 173, 246)" },
+                    { range: [5, 6], color: "rgb(157, 150, 244)" },
+                    { range: [6, 7], color: "rgb(143, 136, 239)" },
+                    { range: [7, 8], color: "rgb(121, 113, 232)" },
+                    { range: [8, 9], color: "rgb(102, 92, 229)" },
+                    { range: [9, 10], color: "rgb(87, 77, 232)" }
                 ]
             }
         }];
-
-        let layout2 = {
-            title: "Ten Most Common OTU's Found",
-            xaxis: {title: "Sample Values"},
-            yaxis: {type: "category"},
-        };
 
          // Use Plotly to plot the data in a gauge chart
          Plotly.newPlot("gauge", trace2);
